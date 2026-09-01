@@ -1,0 +1,19 @@
+# Handoff Protocol - Poke Alliance Dashboard (Wikipedia Local V5.0)
+
+## 1. O Que Foi Feito (Componentes Finalizados)
+- **Refatoração para Vite (V6.0):** Migração do sistema `file://` para um ambiente de desenvolvimento profissional com Vite. Isso garante zero perda de dados e recarregamento automático (HMR).
+- **Criação do Data Vault (Banco de Dados Local):** Todos os dados dispersos no `wiki_vault` foram organizados semanticamente na nova estrutura `dashboard/data/` (Sistemas, Quests, Pokémons, Raw JSONs).
+- **Pokédex Nacional (V5):** Implementada base com 151 Pokémons + adição cirúrgica dos Heróis Meta (Fadas, Noturnos, Fantasmas - ex: Sylveon, Tyranitar).
+- **Move Sets Reais (PokeTibia Meta):** Scripts em Python substituíram os ataques básicos de GameBoy por magias de área e STAB reais do jogo (Surf, Fire Blast, Giga Drain). As magias foram categorizadas visualmente como `[AOE]`, `[BUFF]` e `[SINGLE TARGET]`.
+- **Filtros Inteligentes:** UI atualizada com filtro dinâmico de `Level Mínimo` para uso dos Pokémons, botão "Limpar", e cores elementais integradas no modal.
+- **Sistemas de Treino e Boost:** Aba documental criada explicando detalhadamente: Boost Stones (+50, Hard Cap, 100% chance até +20), Star Machine (Sacrifício e Multiplicador %) e Helds Tier 1-7.
+- **Meta PvE:** Componente estático substituído por interface de Tabs Dinâmicas. Clicar no elemento carrega os Pokémons ideais com suas fotos oficiais em HD via PokeAPI.
+
+## 2. Decisões Arquiteturais Recentes
+- **Vite SPA & File System Database:** Adotamos Vite + arquivos `.json`/`.md` estáticos como banco de dados NoSQL local. Isso elimina risco de corrupção do IndexedDB e mantém a rastreabilidade perfeita no Git para atualizações de scraping.
+- **Data Augmentation Híbrida:** A base da Pokédex (`pokedex_data.js`) foi populada mesclando dados da PokeAPI (sprites, tipos) com overrides fixos para o meta do Poke Alliance (nível de uso calculado, biomas customizados e pools de magias balanceadas).
+- **UI Render no Modal:** Para não poluir o Grid da Pokédex (pensando no TDAH), informações densas (Moveset colorido, Como evoluir, Onde Pegar) só são renderizadas na abertura do modal (`pokedex.js`).
+
+## 3. Próxima Etapa Pendente (Novo Chat)
+- Conectar os novos arquivos estáticos (Sistemas, Quests) à interface da SPA, consumindo-os ativamente via `fetch` ou import do Vite.
+- Iniciar uma nova fase de adaptações do sistema, modificando o Dashboard sessão por sessão.
