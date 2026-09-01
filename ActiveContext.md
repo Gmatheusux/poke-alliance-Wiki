@@ -1,22 +1,31 @@
 # Handoff Protocol - Poke Alliance Dashboard (Wikipedia Local V5.0)
 
-## 1. O Que Foi Feito (Componentes Finalizados)
-- **Refatoração para Vite (V6.0):** Migração do sistema `file://` para um ambiente de desenvolvimento profissional com Vite. Isso garante zero perda de dados e recarregamento automático (HMR).
-- **Criação do Data Vault (Banco de Dados Local):** Todos os dados dispersos no `wiki_vault` foram organizados semanticamente na nova estrutura `dashboard/data/` (Sistemas, Quests, Pokémons, Raw JSONs).
-- **Pokédex Nacional (V5):** Implementada base com 151 Pokémons + adição cirúrgica dos Heróis Meta (Fadas, Noturnos, Fantasmas - ex: Sylveon, Tyranitar).
-- **Move Sets Reais (PokeTibia Meta):** Scripts em Python substituíram os ataques básicos de GameBoy por magias de área e STAB reais do jogo (Surf, Fire Blast, Giga Drain). As magias foram categorizadas visualmente como `[AOE]`, `[BUFF]` e `[SINGLE TARGET]`.
-- **Filtros Inteligentes:** UI atualizada com filtro dinâmico de `Level Mínimo` para uso dos Pokémons, botão "Limpar", e cores elementais integradas no modal.
-- **Sistemas de Treino e Boost:** Aba documental criada explicando detalhadamente: Boost Stones (+50, Hard Cap, 100% chance até +20), Star Machine (Sacrifício e Multiplicador %) e Helds Tier 1-7.
-- **Meta PvE:** Componente estático substituído por interface de Tabs Dinâmicas. Clicar no elemento carrega os Pokémons ideais com suas fotos oficiais em HD via PokeAPI.
-- **Mapeamento de Arquitetura de Dados:** Utilizamos subagentes para realizar o web scraping da Wiki Oficial, definindo as três coleções principais do projeto (Pokémons, Sistemas, Quests).
-- **Schemas e User Flow:** Criados os moldes `_schema.json` no Data Vault e o diagrama Mermaid visual (`userflow.md`) focando em Progressive Disclosure e UX acessível (TDAH).
-- **Extração Massiva do YouTube:** Disparamos múltiplas frentes de subagentes para raspar o meta atual (2026) diretamente dos Top Criadores. Todo esse loot bruto de informações foi consolidado nos arquivos com o prefixo `youtube_raw_` dentro de `dashboard/data/raw_jsons/`.
+## 1. O Que Foi Feito (Infraestrutura e Extração de Dados Brutos)
+O foco desta última etapa foi arquitetar o **Data Vault local** e popular a camada de dados brutos utilizando múltiplos subagentes de pesquisa, scripts de automação headless (Playwright) e extração massiva. **Não houve cruzamento de dados**; cada fonte foi rigorosamente isolada para garantir a integridade da lapidação futura.
 
-## 2. Decisões Arquiteturais Recentes
-- **Vite SPA & File System Database:** Adotamos Vite + arquivos `.json`/`.md` estáticos como banco de dados NoSQL local. Isso elimina risco de corrupção do IndexedDB e mantém a rastreabilidade perfeita no Git para atualizações de scraping.
-- **Data Augmentation Híbrida:** A base da Pokédex (`pokedex_data.js`) foi populada mesclando dados da PokeAPI (sprites, tipos) com overrides fixos para o meta do Poke Alliance (nível de uso calculado, biomas customizados e pools de magias balanceadas).
-- **UI Render no Modal:** Para não poluir o Grid da Pokédex (pensando no TDAH), informações densas (Moveset colorido, Como evoluir, Onde Pegar) só são renderizadas na abertura do modal (`pokedex.js`).
+- **Vite SPA & File System Database:** Adotamos Vite + arquivos `.json`/`.md` estáticos na pasta `dashboard/data/` como banco de dados NoSQL local. Isso elimina risco de corrupção do IndexedDB e mantém rastreabilidade no Git.
+- **Data Augmentation (Pokédex V5):** Base populada mesclando dados da PokeAPI (sprites, tipos) com overrides fixos para o meta do Poke Alliance (Heróis Meta, biomas customizados).
+- **Extração Massiva do YouTube:**
+  - Identificamos o "Top 10" (Loxas, Koiaku, Ramidlav, etc.) do Meta de 2026.
+  - O conteúdo técnico (Rotas 1-150, Hoenn, Reds Escape, Quests de Acesso) foi extraído em massa.
+  - **Silos Gerados:** `youtube_raw_quests.json`, `youtube_raw_systems.json`, `youtube_raw_leveling_routes.json`. E o artefato narrativo `youtube_scout_report.md` e `pka_meta_guide.md`.
+- **Extração Profunda (Critical Catch):**
+  - Subagentes isolaram os dados matemáticos do Vercel SPA (Calculadora de Dano, Star Machine, KKs e Max Broke de Shinies).
+  - **Silo Gerado:** `criticalcatch_raw_data.json`.
+- **Extração Profunda (Wiki Oficial):**
+  - Devido a bloqueios no Chrome DevTools do MCP, orquestramos um script de engenharia reversa via Python + Playwright (`scrape_wiki.py`).
+  - Raspagem das 15 páginas núcleo (Primeiros Passos, EXP/Level, Gerações 1 a 7, Quests Principais).
+  - **Silo Gerado:** `wiki_raw_data.json`.
 
-## 3. Próxima Etapa Pendente (Novo Chat)
-- Lapidar os arquivos brutos (`youtube_raw_*.json`) extraídos e injetá-los na arquitetura de leitura oficial do sistema (`dashboard/data/`).
-- Atualizar a interface do Dashboard para começar a consumir essas novas rotas de forma dinâmica e interativa, usando o `userflow.md` como mapa de UX.
+## 2. Decisões Arquiteturais de UX
+- **Progressive Disclosure:** Para proteger a sobrecarga cognitiva (foco TDAH), adotamos modais para informações densas. A visualização primária mostra apenas a base essencial.
+- **Filtros Inteligentes:** Implementado filtro dinâmico de `Level Mínimo` para uso dos Pokémons, botão "Limpar", e cores elementais integradas no modal.
+- **Move Sets Reais (PokeTibia Meta):** As magias foram categorizadas visualmente como `[AOE]`, `[BUFF]` e `[SINGLE TARGET]`, espelhando o combate do jogo (e não os golpes de GameBoy).
+- **Mapa de Interação:** As diretrizes completas de navegação estão fixadas no artefato visual `userflow.md`.
+
+## 3. Próxima Etapa Pendente (Para o Novo Chat)
+O terreno está 100% preparado. Ao iniciar a próxima sessão, o Gravy (Agente) DEVE seguir este roteiro de lapidação:
+
+1. **Ler o Data Vault:** Escanear o conteúdo da pasta `dashboard/data/raw_jsons/` (YouTube, Critical Catch, Wiki).
+2. **Mesclagem Inteligente:** Cruzar e unificar os dados brutos, removendo duplicatas e formatando no padrão dos nossos schemas mestre (`dashboard/data/quests/_schema.json`, etc.).
+3. **Injeção de Dados (Front-End):** Substituir os dados "mockados" da UI do Dashboard pelas informações oficiais que acabaram de ser refinadas, ativando as novas rotas de navegação descritas no `userflow.md`.
