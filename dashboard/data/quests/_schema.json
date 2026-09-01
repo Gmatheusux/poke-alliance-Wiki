@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Quest",
+  "type": "object",
+  "properties": {
+    "quest_id": { "type": "string" },
+    "name": { "type": "string" },
+    "requirements": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "stages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "step": { "type": "integer" },
+          "action": { "type": "string" }
+        }
+      }
+    },
+    "rewards": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

@@ -8,6 +8,8 @@
 - **Filtros Inteligentes:** UI atualizada com filtro dinâmico de `Level Mínimo` para uso dos Pokémons, botão "Limpar", e cores elementais integradas no modal.
 - **Sistemas de Treino e Boost:** Aba documental criada explicando detalhadamente: Boost Stones (+50, Hard Cap, 100% chance até +20), Star Machine (Sacrifício e Multiplicador %) e Helds Tier 1-7.
 - **Meta PvE:** Componente estático substituído por interface de Tabs Dinâmicas. Clicar no elemento carrega os Pokémons ideais com suas fotos oficiais em HD via PokeAPI.
+- **Mapeamento de Arquitetura de Dados:** Utilizamos subagentes para realizar o web scraping da Wiki Oficial, definindo as três coleções principais do projeto (Pokémons, Sistemas, Quests).
+- **Schemas e User Flow:** Criados os moldes `_schema.json` no Data Vault e o diagrama Mermaid visual (`userflow.md`) focando em Progressive Disclosure e UX acessível (TDAH).
 
 ## 2. Decisões Arquiteturais Recentes
 - **Vite SPA & File System Database:** Adotamos Vite + arquivos `.json`/`.md` estáticos como banco de dados NoSQL local. Isso elimina risco de corrupção do IndexedDB e mantém a rastreabilidade perfeita no Git para atualizações de scraping.
@@ -15,5 +17,5 @@
 - **UI Render no Modal:** Para não poluir o Grid da Pokédex (pensando no TDAH), informações densas (Moveset colorido, Como evoluir, Onde Pegar) só são renderizadas na abertura do modal (`pokedex.js`).
 
 ## 3. Próxima Etapa Pendente (Novo Chat)
-- Conectar os novos arquivos estáticos (Sistemas, Quests) à interface da SPA, consumindo-os ativamente via `fetch` ou import do Vite.
-- Iniciar uma nova fase de adaptações do sistema, modificando o Dashboard sessão por sessão.
+- Iniciar a injeção de dados brutos reais nos arquivos baseados nos moldes `_schema.json` nas pastas `dashboard/data/`.
+- Atualizar a interface do Dashboard para começar a consumir essas 3 novas rotas de forma dinâmica, guiando-se estritamente pelas decisões definidas no `userflow.md`.
