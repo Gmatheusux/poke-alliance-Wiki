@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <title>Poke Alliance - The Ultimate Wiki V5</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Russo+One&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
   <style>
   :root {
     --bg: #0d1117;
@@ -166,14 +167,12 @@
       <p>Navegue pelo mapa global de Kanto e Hoenn. Arraste com o mouse e use a roda do mouse (scroll) para dar zoom.</p>
       
       <div id="map-container">
-        <div class="map-instructions">Scroll: Zoom | Mouse: Arrastar</div>
-        <!-- Placeholder MAP. Usuario pode substituir a URL depois por uma img local -->
-        <img id="map-img" src="https://archives.bulbagarden.net/media/upload/2/25/Kanto_HGSS_map.png" alt="Mapa de Kanto" style="width: 1200px; opacity: 0.8;">
+        <!-- Leaflet will inject the map here -->
       </div>
 
       <div class="wiki-alert">
-        <strong>Atenção sobre o Mapa</strong>
-        <p>A imagem exibida acima é um placeholder oficial de Kanto. Como o cliente do Poke Alliance usa mapas customizados pesados, você deve substituir o link da imagem (ou apontar para um arquivo local <code>mapa.png</code>) no código fonte do arquivo <code>index.html</code> assim que fizer o dump do mapa do servidor.</p>
+        <strong>Status do Mapa Global</strong>
+        <p>Este mapa foi renderizado a partir dos dados brutais do servidor (Z=7) juntamente com 112 marcações (Pins) do seu config.otml, fornecendo precisão total das posições.</p>
       </div>
     </article>
 
@@ -500,6 +499,8 @@
     </div>
   </div>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="data/map_markers.js"></script>
   <script src="pokedex_data.js"></script>
   <script src="pokedex.js"></script>
   <script src="map.js"></script>

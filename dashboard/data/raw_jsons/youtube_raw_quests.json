@@ -1,0 +1,50 @@
+[
+  {
+    "quest_id": "q_willy",
+    "name": "Captain Willy & The Relic",
+    "requirements": ["Level 80"],
+    "stages": [
+      { "step": 1, "action": "Falar com Captain Willy ao sul de Olivine" },
+      { "step": 2, "action": "Resgatar a relíquia na área marítima de Tentacruel" }
+    ],
+    "rewards": ["1.000.000 EXP", "Acesso à quest do Lucky Amulet"]
+  },
+  {
+    "quest_id": "q_flint",
+    "name": "Flint Quest",
+    "requirements": ["Level 100"],
+    "stages": [
+      { "step": 1, "action": "Entregar 150 Onix Tails, 200 Stone Rocks, 200 Horn Drills, 50 Rock Plates" },
+      { "step": 2, "action": "Entregar 10 Crystals, 10 Metals" }
+    ],
+    "rewards": ["500.000 EXP (Step 1)", "3 Ancient Stones e 1 Flint Shelf (Step 2)"]
+  },
+  {
+    "quest_id": "q_vektor",
+    "name": "Dr. Vektor & Porygon",
+    "requirements": ["Level 200"],
+    "stages": [
+      { "step": 1, "action": "Completar a missão dentro do mundo digital do Dr. Vektor" }
+    ],
+    "rewards": ["5.000.000 EXP", "50 Alliance Balls", "50 Yume Balls", "4 Enhanced Normal Stones", "Acesso remoto ao PC Porygon"]
+  },
+  {
+    "quest_id": "q_hoenn",
+    "name": "Acesso a Hoenn",
+    "requirements": ["Level 250"],
+    "stages": [
+      { "step": 1, "action": "Falar com os Professores Oak, Elm, Hank e Birch." },
+      { "step": 2, "action": "Capturar e entregar um Poochyena." }
+    ],
+    "rewards": ["Acesso a Hoenn", "Ovo Inicial (Mudkip/Treecko/Torchic)"]
+  },
+  {
+    "quest_id": "q_ditto",
+    "name": "Dr. Oliveira & Shiny Ditto",
+    "requirements": ["Derrotar 50 Dittos"],
+    "stages": [
+      { "step": 1, "action": "Entregar 1.000 DNA Gosme, 1 Ditto, 1 DNA Chain" }
+    ],
+    "rewards": ["Shiny Ditto (Herda a pokebola, boosts e helds do original)"]
+  }
+]

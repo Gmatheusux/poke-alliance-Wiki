@@ -1,0 +1,25 @@
+[
+  {
+    "route_id": "route_early_rush",
+    "title": "Rush Inicial 1-150",
+    "level_range": "1 - 150",
+    "time_estimate": "Aprox. 3 Horas",
+    "core_strategy": "Ignorar mecânicas lentas. Montar uma equipe Full AoE (Dano em Área) e usar Town Tickets para focar o ganho no cutoff de 100% de XP.",
+    "locations": [
+      { "name": "Cerulean", "target": "Diglett", "priority": "Alta (Buscar Shiny Diglett)" },
+      { "name": "Saffron", "target": "Váriados", "priority": "Média (Escalar dano elemental)" },
+      { "name": "Caverudo", "target": "Dugtrio", "priority": "Muito Alta" }
+    ]
+  },
+  {
+    "route_id": "route_endgame",
+    "title": "Transição para o End-Game",
+    "level_range": "150 - 350+",
+    "core_strategy": "Basear-se na cidade de Olivine (Acesso barco superior). Transferir todo o farming para a região de Hoenn e mapas privados.",
+    "locations": [
+      { "name": "Hoenn Region", "target": "Diversos", "priority": "Alta" },
+      { "name": "Reds Escape", "target": "Instanced Hunt", "priority": "Muito Alta" },
+      { "name": "Tube", "target": "Instanced Hunt", "priority": "Alta" }
+    ]
+  }
+]

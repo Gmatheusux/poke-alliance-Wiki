@@ -1,0 +1,42 @@
+[
+  {
+    "system_id": "sys_helds",
+    "title": "Sistema de Helds e Pity",
+    "description": "Mecânica de fusão e proteção de Held Items para End-game.",
+    "mechanics": [
+      { "name": "Held Fusion", "rule": "Funda 3 itens na máquina. Falhas geram 1 Relic Point." },
+      { "name": "Pity System", "rule": "Com 10 Relic Points acumulados, troque por um Held garantido do tier da falha." },
+      { "name": "NPC Rosemary", "rule": "Fale com ela no Trade Center para retirar o Held do Pokémon em segurança." }
+    ],
+    "related_items": ["Held Items T1-T7", "Relic Points"]
+  },
+  {
+    "system_id": "sys_buffs_passivos",
+    "title": "Buffs e Renda Passiva",
+    "description": "Bônus que o jogador adquire por configurações ou tempo online.",
+    "mechanics": [
+      { "name": "Cam System", "rule": "Ligar a câmera (stream) in-game garante +5% de chance passiva de aparecer Shinies." },
+      { "name": "Online Points", "rule": "Ganha 3 pontos a cada 5 minutos online. Usados exclusivamente para Boosts de EXP." }
+    ],
+    "related_items": ["Cam System", "Online Points"]
+  },
+  {
+    "system_id": "sys_catch",
+    "title": "Matemática de Captura",
+    "description": "Lógica do servidor para aumentar taxas de catch.",
+    "mechanics": [
+      { "name": "Alliance Ball", "rule": "Ignora a saturação da quantidade de bolas. Calcula o catch sempre como se fosse a primeira bola jogada." }
+    ],
+    "related_items": ["Alliance Ball", "Elemental Balls"]
+  },
+  {
+    "system_id": "sys_house",
+    "title": "House Training (Punching Bags)",
+    "description": "Uso de casas (housing) para buffs permanentes de status.",
+    "mechanics": [
+      { "name": "Punching Bags", "rule": "Deixe o Pokémon na house batendo nos sacos para subir Attack, Defense, Precision ou HP permanentemente." },
+      { "name": "Level Locks", "rule": "Utilize travas de nível no painel para otimizar o consumo das cargas dos sacos de pancada." }
+    ],
+    "related_items": ["Punching Bags", "Houses"]
+  }
+]
