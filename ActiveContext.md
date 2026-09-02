@@ -8,6 +8,7 @@
 - Injeção da lista canônica dos 18 elementos no YAML do `DESIGN.md`.
 - Geração e backup do **Moodboard Visual** (`MOODBOARD.md` e artefatos visuais na pasta `assets`).
 - Conclusão da **Etapa 2 (Identidade e Tokens)**: Definição da estética Híbrida Oficial, blindando a regra de Badges (Cor + Ícone) no `DESIGN.md`.
+- Conclusão da **Fase 3 (Extração de Marca)**: Extração da logo oficial (`/assets/logo.png`), confirmação dos hexadecimais originais e documentação do comportamento da comunidade (Discord/Facebook).
 
 ## 2. Decisões Arquiteturais Tomadas
 - **Modelo de Interface:** Foco em Minimalismo, Dark Mode nativo e navegação por Omnisearch (Command Palette).
@@ -16,6 +17,6 @@
 - **Integração de Comunidade e Economia:** Áreas de Tierlist, Team Building, Tabelas de Crafting e Pokelog estruturadas dentro dos modais e abas principais para acesso instantâneo.
 
 ## 3. Próxima Etapa Pendente
-- O backup das diretrizes visuais da Etapa 2 foi salvo no Git.
-- O projeto está blindado e perfeitamente alinhado. 
-- Aguardando as diretrizes táticas do Gabe para inaugurarmos a **Fase 3** (codificação na prática, construção de novos componentes ou novas pesquisas).
+- A Fase 3 (Documentação da Marca e Assets) foi concluída e versionada no repositório.
+- O projeto visual está 100% blindado e fundamentado na identidade real do Pokealliance. 
+- Aguardando o Gabe decidir o start da **Fase 4**: iniciar a estruturação do UI Kit no **Figma** ou levantar um ambiente de código (**React/Vite**).

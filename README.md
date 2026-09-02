@@ -10,6 +10,12 @@ O foco absoluto do nosso front-end é **Zero-Bloat**, acessibilidade cognitiva (
 2. **Progressive Disclosure:** O fim das "paredes de texto". Dados densos (matrizes de dano, lore, regras de Held) ficam resguardados em abas lógicas (Tabs) ou sanfonas (Accordions), revelando-se estritamente sob demanda.
 3. **O Meta é Rei:** Mais do que um banco estático, somos um hub competitivo. A Pokédex abriga módulos de comunidade que trazem **Tierlists Democráticas** (com votos dos usuários) e **Guias de Team Building**.
 
+## 🧬 Identidade e Comunidade (Pokealliance)
+Nossa plataforma foi alinhada com a engenharia reversa da marca original do servidor:
+- **Sincronia Cromática:** Utilizamos exatamente os hexadecimais originais da marca (`#3C5AA6` e `#FFCB05`).
+- **Asset Original:** A logo oficial extraída diretamente do ecossistema reside em `/assets/logo.png`.
+- **Ecossistema:** Como a comunidade não utiliza fóruns web convencionais (focando em **Discord** e **Facebook**), nossa interface foi projetada para suprir a carência de dados organizados na web de forma hiper-fluida.
+
 ## 🗺️ Arquitetura de Informação (As 8 Sessões)
 
 Nossa aplicação é dividida em 8 pilares base (as minúcias estão em `SITEMAP.md`):

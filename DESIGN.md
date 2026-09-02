@@ -50,6 +50,7 @@ Este documento estabelece as regras sagradas de design e usabilidade para a plat
 
 ## 1. Identidade Visual e Oficialidade (Pro-Max)
 - **Estética Oficial:** A interface deve espelhar a qualidade de material corporativo da franquia. Componentes interativos recebem `border-radius` macios (design amigável) e sprites 2D utilizarão Drop Shadows intensos para gerar efeito **Pop-Out**.
+- **Brand e Assets:** A identidade principal consome a logomarca original extraída diretamente do servidor (`/assets/logo.png`), mantendo a exatidão da paleta oficial (Azul `#3C5AA6` e Amarelo `#FFCB05`).
 - **Cores Estritas como Dados:** A paleta de cores variadas (vermelhos, verdes, azuis vibrantes) é restrita **única e exclusivamente** aos **Elementos/Tipagens**. A estrutura do site, modais e backgrounds permanecem em Slate/Zinc neutro para evitar fadiga visual.
 - **Regra do Ícone Obrigatório:** Sempre que um elemento/tipo for citado na UI (Filtros, Pokédex, Skills, Tabelas de Crafting), ele DEVE ser representado pela **Soma Inseparável = (Cor exata do Elemento + Ícone Oficial)** em formato de Badge/Pill. Jamais confie apenas no texto.
 
