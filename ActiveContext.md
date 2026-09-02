@@ -17,6 +17,6 @@
 - **Integração de Comunidade e Economia:** Áreas de Tierlist, Team Building, Tabelas de Crafting e Pokelog estruturadas dentro dos modais e abas principais para acesso instantâneo.
 
 ## 3. Próxima Etapa Pendente
-- Auditoria de UX (Alta Densidade e Motion) concluída. Regras modularizadas na pasta `.agents/rules/` para prevenir colapso arquitetural.
-- A teoria de design system está fechada e backupeada no Git.
-- Aguardando o Gabe dar a ordem para levantar o ambiente de desenvolvimento de UI (**React/Vite**, etc) ou preparar os componentes no **Figma**.
+- Conclusão da **Fase 5 (Tipografia e Ícones)**: Adoção do estilo tátil **SV Style** (Scarlet/Violet), fonte **Inter** (14px base) e escalas gravadas em `.agents/rules/design_tokens.md`.
+- Todo o planejamento de Design System, arquitetura e curadoria está 100% documentado, blindado e versionado.
+- Aguardando ordem tática do Gabe para acionar a **Fase 6** (A Construção Real: iniciar UI Kit no **Figma** ou bater código no **React/Tailwind**).
