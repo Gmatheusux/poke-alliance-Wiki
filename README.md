@@ -79,3 +79,13 @@ O projeto migrará de Vanilla JS para **React + Tailwind** sob rígidas regras a
 - **State Management:** Separação entre Estado de API (TanStack Query) e Estado de Interface (Zustand).
 - **Engine Gráfica:** Proibido uso de DOM para marcadores de mapa. Minimapa operado via **PixiJS (Canvas/WebGL)** e assets via **Sprite Atlases** em WebP.
 - **Handoff (Regra 19):** Todo desenvolvimento ocorre isoladamente via Git Worktree. A branch master permanece blindada.
+
+## 💻 Diretrizes de Programacao (Engineering Guidelines)
+O front-end e regido por regras inegociaveis de otimizacao de CPU e RAM para suportar alta carga de dados:
+- **Arquitetura Base:** React + Tailwind usando Feature-Sliced Design (FSD).
+- **Zero Banco de Dados:** Consumo estatico de JSON/APIs via \TanStack Query\ com \staleTime: Infinity\.
+- **Anti-Lag (Listas Massivas):** Proibido renderizar tabelas e grids grandes no DOM. Uso estrito de \TanStack Virtual\ com virtualizacao 2D (CSS Grid) para a Pokedex em Cards.
+- **Motor Grafico (Mapa):** Elementos visuais massivos do minimapa sao renderizados no nivel da GPU usando \PixiJS\ (WebGL/Canvas), evitando o colapso do DOM.
+- **Estado e Derivacao:** \Zustand\ apenas para intencao de acao. Calculos de busca de alta velocidade usam \useMemo\ na Main Thread (sem uso desnecessario de Web Workers).
+- **Sandbox de Desenvolvimento (Regra 19):** Codigo nao toca na master. Todo Scaffold e feito em Git Worktrees separadas (ex: a pasta \poke-alliance-react\). Para maiores detalhes, leia o arquivo modular na pasta .agents/rules.
+

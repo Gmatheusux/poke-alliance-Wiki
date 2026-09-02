@@ -28,3 +28,9 @@
 
 - **Fase 6 Interrompida Taticamente:** Scaffold de componentes React pausado. O usuário (Gabe) está gerando conteúdo/writers para as sessões do site.
 - **Ação Atual:** Configurando a fundação da arquitetura isolada (Git Worktree) para receber o código futuro sem comprometer a master.
+
+## 4. Handoff Arquitetural (Instruções para os Próximos Agentes)
+- **Worktree Ativa:** Todo código React/Tailwind deve ser gerado na pasta física do worktree (branch eat/react-core-layout).
+- **Missão Imadiata (Primeiro Chat de Código):** Iniciar o Scaffold do AppLayout (Sidebar, Roteamento, Fundo Slate) e o componente de Omnisearch via React Portal.
+- **Restrições:** Sem Banco de Dados SQL. Consumir dados via JSON estático com TanStack Query. Sem divs no Minimapa (usar PixiJS).
+- **Design System:** Rigor absoluto às regras do DESIGN.md (Zero-Bloat, Badges oficiais).
