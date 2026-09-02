@@ -31,6 +31,15 @@ Nossa aplicação é dividida em 8 pilares base (as minúcias estão em `SITEMAP
 
 ## 🛠️ Paradigmas de Desenvolvimento (Handoff)
 
+## 🎨 Design System (A Fundação Híbrida)
+O ecossistema visual funde a arquitetura **Zero-Bloat** de interfaces de alta densidade com o DNA **Oficial da Franquia e do Servidor**:
+- **Tipografia:** `Futura Condensed` (ou Helvetica Black Condensed) para Títulos e CTAs de impacto. `Montserrat` para o corpo, atributos, tier lists e tabelas.
+- **Rampa de Cores (50 a 900):** Azul (`#3C5AA6`) e Amarelo (`#FFCB05`) originais da marca para interações. Dark Mode mestre travado em `Slate/Zinc` (Base `#0F1115`).
+- **Iconografia (SV Style):** Badges táteis (pílulas) com *Inner Shadow* para botões e a paleta canônica com os 18 Hexadecimais oficiais dos elementos.
+- **Física e Motion (GPU):** Animações renderizadas exclusivamente via `opacity` e `transform`, molas tensionadas para Modais/Drawers (Zero gelatina) e fallback obrigatório para acessibilidade (Reduced Motion).
+
+---
+
 Para contribuir na base de código (geralmente baseada em React/Tailwind), é terminantemente obrigatória a leitura do "Cofre" na raiz do projeto:
 
 - `DESIGN.md`: Nosso contrato visual sagrado. Seu cabeçalho YAML abriga os Design Tokens (Tipografia, Espaçamentos e a paleta canônica dos 18 Elementos). Seu corpo Markdown detalha as leis inquebráveis de usabilidade (Mobile Thumb-Zone, Zero Squeeze).
