@@ -22,3 +22,10 @@ Est√©tica utilit√°ria, uso de Omnisearch e tabelas rigorosamente alinhadas.
 ### Conceito 2: Drawers (Progressive Disclosure)
 Painel lateral revelando informa√ß√µes avan√ßadas sem perder o contexto (Grid ao fundo). Cores restritas aos badges de Elementos.
 ![Drawer Concept](./assets/moodboard/drawer_concept.jpg)
+
+### Conceito 3: HÌbrido Oficial (A Alma da Franquia)
+A fus„o da arquitetura Zero-Bloat com a identidade visual oficial da franquia.
+- **Cores Institucionais:** Azul e Amarelo oficiais aplicados em CTAs.
+- **Elementos como Dados:** Cores vibrantes restritas EXCLUSIVAMENTE aos Badges de Tipagem (Sempre Cor + Õcone).
+- **EstÈtica:** Fundo Slate/Zinc neutro, border-radius suave e Drop Shadows gerando efeito Pop-Out nos sprites.
+![Hybrid Official Concept](./assets/moodboard/hybrid_official_concept.jpg)
