@@ -17,6 +17,6 @@
 - **Integração de Comunidade e Economia:** Áreas de Tierlist, Team Building, Tabelas de Crafting e Pokelog estruturadas dentro dos modais e abas principais para acesso instantâneo.
 
 ## 3. Próxima Etapa Pendente
-- A Fase 3 (Documentação da Marca e Assets) foi concluída e versionada no repositório.
-- O projeto visual está 100% blindado e fundamentado na identidade real do Pokealliance. 
-- Aguardando o Gabe decidir o start da **Fase 4**: iniciar a estruturação do UI Kit no **Figma** ou levantar um ambiente de código (**React/Vite**).
+- Auditoria de UX (Alta Densidade e Motion) concluída. Regras modularizadas na pasta `.agents/rules/` para prevenir colapso arquitetural.
+- A teoria de design system está fechada e backupeada no Git.
+- Aguardando o Gabe dar a ordem para levantar o ambiente de desenvolvimento de UI (**React/Vite**, etc) ou preparar os componentes no **Figma**.

@@ -34,6 +34,7 @@ Nossa aplicação é dividida em 8 pilares base (as minúcias estão em `SITEMAP
 Para contribuir na base de código (geralmente baseada em React/Tailwind), é terminantemente obrigatória a leitura do "Cofre" na raiz do projeto:
 
 - `DESIGN.md`: Nosso contrato visual sagrado. Seu cabeçalho YAML abriga os Design Tokens (Tipografia, Espaçamentos e a paleta canônica dos 18 Elementos). Seu corpo Markdown detalha as leis inquebráveis de usabilidade (Mobile Thumb-Zone, Zero Squeeze).
+- `.agents/rules/`: Diretório modular blindado. Armazena as leis absolutas de UX que não cabem no DESIGN.md, evitando AI Slop (ex: `ui_density_mobile.md` para tabelas e `motion_physics.md` para GPU performance).
 - `MOODBOARD.md`: A diretriz estética e visual da interface. Funde a arquitetura Zero-Bloat (SaaS de alta densidade) com a identidade oficial da franquia (Azul/Amarelo institucionais, Badges estritos para Elementos e geometria amigável). Possui os conceitos renderizados.
 - `ActiveContext.md`: O "cérebro" de rastreabilidade. Mantém vivo o estado do projeto, ditando o Paradigma de Contêineres (nenhuma codificação ocorre sem consultar o contexto atualizado).
 - `userflow.md`: O fluxograma gráfico (Mermaid) mapeando os nós exatos da jornada do usuário pela plataforma.
