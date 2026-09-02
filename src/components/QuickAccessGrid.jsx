@@ -2,14 +2,14 @@ import React from 'react';
 import { Book, Settings, Map, User, Navigation, Globe, TrendingUp, Zap } from 'lucide-react';
 
 const accessItems = [
-  { label: 'Pokédex', desc: 'Meta, Combate e Loot', icon: Book, color: 'text-blue-400', glow: 'group-hover:shadow-[0_0_15px_rgba(96,165,250,0.4)]', bg: 'bg-blue-500/20' },
-  { label: 'Sistemas', desc: 'Crafting, Boosts e Helds', icon: Settings, color: 'text-gray-300', glow: 'group-hover:shadow-[0_0_15px_rgba(209,213,219,0.3)]', bg: 'bg-gray-400/20' },
-  { label: 'Quests & NPCs', desc: 'Índice Mestre e Rotas', icon: Map, color: 'text-amber-400', glow: 'group-hover:shadow-[0_0_15px_rgba(251,191,36,0.4)]', bg: 'bg-amber-500/20' },
-  { label: 'Personagem', desc: 'Talentos e Medalhas', icon: User, color: 'text-emerald-400', glow: 'group-hover:shadow-[0_0_15px_rgba(52,211,153,0.4)]', bg: 'bg-emerald-500/20' },
-  { label: 'Minimapa', desc: 'Filtros e Respawns', icon: Navigation, color: 'text-teal-400', glow: 'group-hover:shadow-[0_0_15px_rgba(45,212,191,0.4)]', bg: 'bg-teal-500/20' },
-  { label: 'Regiões', desc: 'Geografia do Servidor', icon: Globe, color: 'text-cyan-400', glow: 'group-hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]', bg: 'bg-cyan-500/20' },
-  { label: 'Guia de Leveling', desc: 'Rotas Otimizadas', icon: TrendingUp, color: 'text-purple-400', glow: 'group-hover:shadow-[0_0_15px_rgba(192,132,252,0.4)]', bg: 'bg-purple-500/20' },
-  { label: 'Tier List', desc: 'Ranking da Comunidade', icon: Zap, color: 'text-brand-accent', glow: 'group-hover:shadow-[0_0_15px_rgba(255,203,5,0.4)]', bg: 'bg-brand-accent/20' },
+  { label: 'Pokédex', desc: 'Meta, Combate e Loot', img: '/assets/icons/pokedex.png', color: 'text-blue-400', glow: 'group-hover:shadow-[0_0_15px_rgba(96,165,250,0.4)]', bg: 'bg-blue-500/20' },
+  { label: 'Sistemas', desc: 'Crafting, Boosts e Helds', img: '/assets/icons/sistemas.png', color: 'text-gray-300', glow: 'group-hover:shadow-[0_0_15px_rgba(209,213,219,0.3)]', bg: 'bg-gray-400/20' },
+  { label: 'Quests & NPCs', desc: 'Índice Mestre e Rotas', img: '/assets/icons/quests.png', color: 'text-amber-400', glow: 'group-hover:shadow-[0_0_15px_rgba(251,191,36,0.4)]', bg: 'bg-amber-500/20' },
+  { label: 'Personagem', desc: 'Talentos e Medalhas', img: '/assets/icons/personagem.png', color: 'text-emerald-400', glow: 'group-hover:shadow-[0_0_15px_rgba(52,211,153,0.4)]', bg: 'bg-emerald-500/20' },
+  { label: 'Minimapa', desc: 'Filtros e Respawns', img: '/assets/icons/minimapa.png', color: 'text-teal-400', glow: 'group-hover:shadow-[0_0_15px_rgba(45,212,191,0.4)]', bg: 'bg-teal-500/20' },
+  { label: 'Regiões', desc: 'Geografia do Servidor', img: '/assets/icons/regioes.png', color: 'text-cyan-400', glow: 'group-hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]', bg: 'bg-cyan-500/20' },
+  { label: 'Guia de Leveling', desc: 'Rotas Otimizadas', img: '/assets/icons/leveling.png', color: 'text-purple-400', glow: 'group-hover:shadow-[0_0_15px_rgba(192,132,252,0.4)]', bg: 'bg-purple-500/20' },
+  { label: 'Tier List', desc: 'Ranking da Comunidade', img: '/assets/icons/tierlist.png', color: 'text-brand-accent', glow: 'group-hover:shadow-[0_0_15px_rgba(255,203,5,0.4)]', bg: 'bg-brand-accent/20' },
 ];
 
 export default function QuickAccessGrid() {
@@ -38,9 +38,13 @@ export default function QuickAccessGrid() {
               {/* Gradient Overlay for Text Readability */}
               <div className="absolute inset-0 z-0 bg-gradient-to-t from-surface via-surface/80 to-transparent pointer-events-none" />
 
-              {/* Icon Container with Glow */}
-              <div className={`relative z-10 w-12 h-12 flex items-center justify-center rounded-xl ${item.bg} mb-auto transition-all duration-300 ${item.glow} group-hover:scale-110`}>
-                <Icon size={24} className={item.color} />
+              {/* Icon / Image Container with Glow */}
+              <div className={`relative z-10 w-16 h-16 flex items-center justify-center rounded-xl ${item.bg} mb-auto transition-all duration-300 ${item.glow} group-hover:scale-110`}>
+                {item.img ? (
+                  <img src={item.img} alt={item.label} className="w-12 h-12 object-contain drop-shadow-md" />
+                ) : (
+                  <Icon size={24} className={item.color} />
+                )}
               </div>
               
               {/* Text Group */}

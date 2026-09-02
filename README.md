@@ -64,3 +64,6 @@ O projeto migrarÃ¡ de Vanilla JS para **React + Tailwind** sob rÃ­gidas regras a
 - **State Management:** SeparaÃ§Ã£o entre Estado de API (TanStack Query) e Estado de Interface (Zustand).
 - **Engine GrÃ¡fica:** Proibido uso de DOM para marcadores de mapa. Minimapa operado via **PixiJS (Canvas/WebGL)** e assets via **Sprite Atlases** em WebP.
 - **Handoff (Regra 19):** Todo desenvolvimento ocorre isoladamente via Git Worktree. A branch master permanece blindada.
+
+## Assets Gerados por IA
+Todos os ícones da barra de navegação e as imagens de fundo do grid foram gerados autonomamente via Inteligência Artificial (Gemini), utilizando técnicas de recortes de fundo e design system adaptativo, armazenados de forma limpa no diretório public/assets/icons/.

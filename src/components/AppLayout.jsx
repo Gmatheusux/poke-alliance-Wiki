@@ -6,48 +6,56 @@ import OmnisearchModal from './OmnisearchModal';
 const menuItems = [
   {
     title: 'Dashboard',
+    img: '/assets/icons/dashboard.png',
     icon: Home,
     color: 'text-brand-accent',
     subItems: ['Resumo Diário', 'Acesso Rápido']
   },
   {
     title: 'Pokédex',
+    img: '/assets/icons/pokedex.png',
     icon: Book,
     color: 'text-blue-400',
     subItems: ['Filtros Avançados', 'Tierlist da Comunidade', 'Guia de Times']
   },
   {
     title: 'Sistemas',
+    img: '/assets/icons/sistemas.png',
     icon: Shield,
     color: 'text-gray-300',
     subItems: ['Boosts', 'Helds', 'Máquina de Star']
   },
   {
     title: 'Quests & NPCs',
+    img: '/assets/icons/quests.png',
     icon: Map,
     color: 'text-amber-400',
     subItems: ['Índice Mestre', 'Catálogo de NPCs']
   },
   {
     title: 'Personagem',
+    img: '/assets/icons/personagem.png',
     icon: User,
     color: 'text-emerald-400',
     subItems: ['Talentos', 'Conquistas', 'Medalhas', 'Pokelog']
   },
   {
     title: 'Minimapa',
+    img: '/assets/icons/minimapa.png',
     icon: Navigation,
     color: 'text-teal-400',
     subItems: ['Filtros', 'Zonas de Caça']
   },
   {
     title: 'Regiões',
+    img: '/assets/icons/regioes.png',
     icon: Globe,
     color: 'text-cyan-400',
     subItems: ['Catálogo de Zonas', 'Informações Vitais']
   },
   {
     title: 'Guia de Leveling',
+    img: '/assets/icons/leveling.png',
     icon: TrendingUp,
     color: 'text-purple-400',
     subItems: ['Rotas Otimizadas', 'Recomendações']
@@ -67,7 +75,11 @@ function NavItem({ item }) {
         }`}
       >
         <div className="flex items-center gap-3 font-medium">
-          <Icon size={18} className={isOpen ? item.color : 'text-text-muted'} />
+          {item.img ? (
+            <img src={item.img} alt={item.title} className={`w-5 h-5 object-contain ${isOpen ? '' : 'opacity-70 grayscale-[50%]'}`} />
+          ) : (
+            <Icon size={18} className={isOpen ? item.color : 'text-text-muted'} />
+          )}
           {item.title}
         </div>
         <ChevronDown 
