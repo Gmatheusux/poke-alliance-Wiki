@@ -1,6 +1,8 @@
 # Active Context - Poke Alliance
 
 ## 1. Componentes Finalizados (Sessão Atual)
+- Processamento massivo do `wiki_vault` concluído via orquestração de 8 subagentes em paralelo.
+- Arquitetura de dados totalmente lapidada e salva no diretório `/content_ready/` (8 arquivos Markdown), em conformidade com as leis de Copywriting e UX Voice.
 - Execução de subagentes para validação de tom de voz e UX Writing (Franquia Pokémon + Indústria AAA).
 - Consolidação do conceito **Híbrido Competitivo** de comunicação, documentado isoladamente em `.agents/rules/ux_writing_voice.md` para evitar bloating de contexto.
 - Importação do fluxo de UX (`task.md`).
@@ -17,11 +19,11 @@
 - **Direção de Arte (Híbrida Oficial):** Fusão de interface utilitária Zero-Bloat (SaaS) com identidade oficial da franquia. Fundo Slate/Zinc, CTAs em Azul/Amarelo oficiais e cores saturadas puramente como dados inseparáveis de seus respectivos ícones (Badges de Elemento).
 - **Tratamento de Dados:** Uso rigoroso de *Progressive Disclosure* (Tabs/Accordions, Drawers) e microinterações (Tooltips Ricos) para evitar navegação de vai-e-vem.
 - **Integração de Comunidade e Economia:** Áreas de Tierlist, Team Building, Tabelas de Crafting e Pokelog estruturadas dentro dos modais e abas principais para acesso instantâneo.
-- **Comunicação (UX Writing):** Adoção de arquitetura AAA, separando mecanicamente os textos de Lore e dados de combate.
+- **Comunicação (UX Writing e Copywriting):** Adoção de arquitetura AAA e inserção compulsória de atribuição (*Dev Comments*) para conteúdos com origem em youtubers/comunidade, assegurando transparência.
 
 ## 3. Próxima Etapa Pendente
-- O planejamento UX, a Arquitetura de Informação e as Regras de UI/Texto estão 100% formatadas, modulares e validadas.
-- **Fase 6 Inicializada:** Avançar para a estruturação do front-end real. Iniciar scaffold da base de código (React/Tailwind/Vite) ou estruturação final do UI Kit no Figma, dependendo do gatilho imediato.
+- Toda a estruturação de conteúdo, arquitetura de dados e heurísticas de texto estão 100% finalizadas e no repositório.
+- **Fase 6 Inicializada:** Avançar para a estruturação do front-end real. Iniciar scaffold da base de código (React/Tailwind/Vite).
 
 - **Fase 6 Interrompida Taticamente:** Scaffold de componentes React pausado. O usuário (Gabe) está gerando conteúdo/writers para as sessões do site.
 - **Ação Atual:** Configurando a fundação da arquitetura isolada (Git Worktree) para receber o código futuro sem comprometer a master.

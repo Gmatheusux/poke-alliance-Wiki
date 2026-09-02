@@ -35,6 +35,12 @@ A linguagem da plataforma segue a regra do **Híbrido Competitivo** (detalhada e
 - **Ocultamento Estratégico (Progressive Disclosure):** A matemática profunda do meta-game (estilo Smogon) fica recolhida em *Advanced Tooltips* (estilo Blizzard) acionados via Hover/Shift.
 - **Verbos Padronizados & Badges:** Eliminação de jargões flutuantes. Ações têm verbos únicos, e toda citação a elementos/status exige a presença de um Badge visual.
 
+## 📝 Copywriting & Direitos Autorais (Transparência)
+A base de dados textual contida no diretório `content_ready/` foi extensivamente extraída da Wiki oficial, fóruns e, primordialmente, vídeos e guias do **YouTube**. 
+Como regra de ouro de respeito à comunidade e aos criadores, **toda e qualquer** interface ou guia que for alimentado por dados estratégicos de youtubers e influenciadores deverá exibir obrigatoriamente um *Dev Comment* (Callout):
+> *"Este conteúdo foi gerado com análise dos parceiros da Poke Alliance."*
+Essa política garante total transparência intelectual, protegendo o projeto e enaltecendo a comunidade criadora do meta.
+
 ## 🛠️ Paradigmas de Desenvolvimento (Handoff)
 
 ## 🎨 Design System (A Fundação Híbrida)
