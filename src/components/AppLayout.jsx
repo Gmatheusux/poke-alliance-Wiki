@@ -6,56 +6,56 @@ import OmnisearchModal from './OmnisearchModal';
 const menuItems = [
   {
     title: 'Dashboard',
-    img: '/assets/icons/dashboard.png',
+    img: './assets/icons/dashboard.png',
     icon: Home,
     color: 'text-brand-accent',
     subItems: ['Resumo Diário', 'Acesso Rápido']
   },
   {
     title: 'Pokédex',
-    img: '/assets/icons/pokedex.png',
+    img: './assets/icons/pokedex.png',
     icon: Book,
     color: 'text-blue-400',
     subItems: ['Filtros Avançados', 'Tierlist da Comunidade', 'Guia de Times']
   },
   {
     title: 'Sistemas',
-    img: '/assets/icons/sistemas.png',
+    img: './assets/icons/sistemas.png',
     icon: Shield,
     color: 'text-gray-300',
     subItems: ['Boosts', 'Helds', 'Máquina de Star']
   },
   {
     title: 'Quests & NPCs',
-    img: '/assets/icons/quests.png',
+    img: './assets/icons/quests.png',
     icon: Map,
     color: 'text-amber-400',
     subItems: ['Índice Mestre', 'Catálogo de NPCs']
   },
   {
     title: 'Personagem',
-    img: '/assets/icons/personagem.png',
+    img: './assets/icons/personagem.png',
     icon: User,
     color: 'text-emerald-400',
     subItems: ['Talentos', 'Conquistas', 'Medalhas', 'Pokelog']
   },
   {
     title: 'Minimapa',
-    img: '/assets/icons/minimapa.png',
+    img: './assets/icons/minimapa.png',
     icon: Navigation,
     color: 'text-teal-400',
     subItems: ['Filtros', 'Zonas de Caça']
   },
   {
     title: 'Regiões',
-    img: '/assets/icons/regioes.png',
+    img: './assets/icons/regioes.png',
     icon: Globe,
     color: 'text-cyan-400',
     subItems: ['Catálogo de Zonas', 'Informações Vitais']
   },
   {
     title: 'Guia de Leveling',
-    img: '/assets/icons/leveling.png',
+    img: './assets/icons/leveling.png',
     icon: TrendingUp,
     color: 'text-purple-400',
     subItems: ['Rotas Otimizadas', 'Recomendações']
@@ -113,10 +113,8 @@ export default function AppLayout({ children }) {
       {/* Sidebar (with relative z-index to sit above bg) */}
       <aside className="relative z-10 w-72 bg-surface border-r border-surface-hover flex flex-col flex-shrink-0 backdrop-blur-sm bg-opacity-95">
         <div className="p-4 flex items-center gap-3 font-heading font-bold text-xl tracking-wide">
-          <div className="w-8 h-8 rounded-full bg-brand-primary flex items-center justify-center">
-            <Zap size={18} className="text-brand-accent" />
-          </div>
-          Poke Alliance
+          <img src="./assets/logo.png" alt="Poke Alliance Logo" className="w-9 h-9 object-contain drop-shadow-md" />
+          <span className="text-white drop-shadow-md">Poke Alliance</span>
         </div>
         
         <div className="px-4 pb-4">
