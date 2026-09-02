@@ -1,31 +1,19 @@
-# Handoff Protocol - Poke Alliance Dashboard (Wikipedia Local V5.0)
+# Active Context - Poke Alliance
 
-## 1. O Que Foi Feito (Infraestrutura e Extração de Dados Brutos)
-O foco desta última etapa foi arquitetar o **Data Vault local** e popular a camada de dados brutos utilizando múltiplos subagentes de pesquisa, scripts de automação headless (Playwright) e extração massiva. **Não houve cruzamento de dados**; cada fonte foi rigorosamente isolada para garantir a integridade da lapidação futura.
+## 1. Componentes Finalizados (Sessão Atual)
+- Importação do fluxo de UX (`task.md`).
+- Execução de pesquisa de referências de UI/UX para wikis modernas via subagente.
+- Definição da fundação arquitetural e visual (criação do `DESIGN.md` com tokens YAML e diretrizes em Markdown).
+- Geração completa do `SITEMAP.md` integrando os fluxos do `userflow.md` com as heurísticas de UX modernas, contendo as 8 sessões principais (Dashboard, Pokédex V5, Sistemas, Quests/NPCs, Personagem, Minimapa, Regiões, Guia de Leveling).
+- Injeção da lista canônica dos 18 elementos no YAML do `DESIGN.md`.
+- Geração e backup do **Moodboard Visual** (`MOODBOARD.md` e artefatos visuais na pasta `assets`).
 
-- **Vite SPA & File System Database:** Adotamos Vite + arquivos `.json`/`.md` estáticos na pasta `dashboard/data/` como banco de dados NoSQL local. Isso elimina risco de corrupção do IndexedDB e mantém rastreabilidade no Git.
-- **Data Augmentation (Pokédex V5):** Base populada mesclando dados da PokeAPI (sprites, tipos) com overrides fixos para o meta do Poke Alliance (Heróis Meta, biomas customizados).
-- **Extração Massiva do YouTube:**
-  - Identificamos o "Top 10" (Loxas, Koiaku, Ramidlav, etc.) do Meta de 2026.
-  - O conteúdo técnico (Rotas 1-150, Hoenn, Reds Escape, Quests de Acesso) foi extraído em massa.
-  - **Silos Gerados:** `youtube_raw_quests.json`, `youtube_raw_systems.json`, `youtube_raw_leveling_routes.json`. E o artefato narrativo `youtube_scout_report.md` e `pka_meta_guide.md`.
-- **Extração Profunda (Critical Catch):**
-  - Subagentes isolaram os dados matemáticos do Vercel SPA (Calculadora de Dano, Star Machine, KKs e Max Broke de Shinies).
-  - **Silo Gerado:** `criticalcatch_raw_data.json`.
-- **Extração Profunda (Wiki Oficial):**
-  - Devido a bloqueios no Chrome DevTools do MCP, orquestramos um script de engenharia reversa via Python + Playwright (`scrape_wiki.py`).
-  - Raspagem das 15 páginas núcleo (Primeiros Passos, EXP/Level, Gerações 1 a 7, Quests Principais).
-  - **Silo Gerado:** `wiki_raw_data.json`.
+## 2. Decisões Arquiteturais Tomadas
+- **Modelo de Interface:** Foco em Minimalismo, Dark Mode nativo e navegação por Omnisearch (Command Palette).
+- **Direção de Arte (Híbrida):** Fusão de interface utilitária Zero-Bloat (SaaS de alta densidade) com UX diegético de jogos. Fundo Slate/Zinc e cores saturadas puramente informativas (dados/badges).
+- **Tratamento de Dados:** Uso rigoroso de *Progressive Disclosure* (Tabs/Accordions, Drawers) e microinterações (Tooltips Ricos) para evitar navegação de vai-e-vem.
+- **Integração de Comunidade e Economia:** Áreas de Tierlist, Team Building, Tabelas de Crafting e Pokelog estruturadas dentro dos modais e abas principais para acesso instantâneo.
 
-## 2. Decisões Arquiteturais de UX
-- **Progressive Disclosure:** Para proteger a sobrecarga cognitiva (foco TDAH), adotamos modais para informações densas. A visualização primária mostra apenas a base essencial.
-- **Filtros Inteligentes:** Implementado filtro dinâmico de `Level Mínimo` para uso dos Pokémons, botão "Limpar", e cores elementais integradas no modal.
-- **Move Sets Reais (PokeTibia Meta):** As magias foram categorizadas visualmente como `[AOE]`, `[BUFF]` e `[SINGLE TARGET]`, espelhando o combate do jogo (e não os golpes de GameBoy).
-- **Mapa de Interação:** As diretrizes completas de navegação estão fixadas no artefato visual `userflow.md`.
-
-## 3. Próxima Etapa Pendente (Para o Novo Chat)
-O terreno está 100% preparado. Ao iniciar a próxima sessão, o Gravy (Agente) DEVE seguir este roteiro de lapidação:
-
-1. **Ler o Data Vault:** Escanear o conteúdo da pasta `dashboard/data/raw_jsons/` (YouTube, Critical Catch, Wiki).
-2. **Mesclagem Inteligente:** Cruzar e unificar os dados brutos, removendo duplicatas e formatando no padrão dos nossos schemas mestre (`dashboard/data/quests/_schema.json`, etc.).
-3. **Injeção de Dados (Front-End):** Substituir os dados "mockados" da UI do Dashboard pelas informações oficiais que acabaram de ser refinadas, ativando as novas rotas de navegação descritas no `userflow.md`.
+## 3. Próxima Etapa Pendente
+- O backup das diretrizes visuais foi salvo. O início do desenvolvimento (UI/Tokens) foi pausado.
+- Aguardando o Gabe direcionar o escopo da **próxima rodada de curadoria** solicitada (pesquisa de novas features ou organização dos dados pendentes).

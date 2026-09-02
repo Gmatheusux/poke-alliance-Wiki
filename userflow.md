@@ -1,45 +1,84 @@
-# User Flow - Poke Alliance Wiki (Dashboard SPA)
+# User Flow Interativo - Poke Alliance Wiki (Modern V2)
 
-Este documento mapeia a jornada do usuário dentro da nossa Wiki Local, focada em otimização para TDAH (Progressive Disclosure, Modais, Semântica de Cores).
+Este documento mapeia todas as jornadas e ramificações que o jogador pode realizar dentro da nossa Wiki. Ele serve como o **mapa oficial** para guiar a construção do código e UI nas próximas sessões.
 
-## Fluxograma Principal
+## Fluxograma Global
 
 ```mermaid
 graph TD
-    %% Nós principais
-    Home[Dashboard Inicial] --> O{O que o jogador quer fazer?}
-    
-    %% Rota 1: Consulta de Meta
-    O -->|Montar Time / Ver Status| P[Pokédex V5]
-    P --> P1[Filtros Rápidos: Elemento, Nível Mínimo]
-    P1 --> P2[Clica no Card do Pokémon]
-    P2 --> P3[Modal de Detalhes Surge - Blur no Fundo]
-    P3 --> P4{Leitura de Movesets}
-    P4 --> P5[Ataques com Tags Visuais: AOE, BUFF, SINGLE]
-    P4 --> P6[Tags de Mobilidade: Fly, Surf]
+    %% Base e Navegação Global
+    Start((Início da Sessão)) --> NavGlobal{Navegação Global}
+    NavGlobal --> |Foco Direto| Omni[Omnisearch Ctrl+K]
+    NavGlobal --> |Navegação Guiada| Sidebar[Sidebar / Bottom Nav]
 
-    %% Rota 2: Progressão
-    O -->|Entender Mecânicas| S[Aba Sistemas]
-    S --> S1[Tabs de Navegação Lateral]
-    S1 --> S2[Boosts, Máquina de Star, Helds]
-    S2 --> S3[Exibição em Bullet Points Curtos]
+    %% Omnisearch Flow
+    Omni --> OmniResult[Painel de Resultados Flutuante]
+    OmniResult -.-> |Hover/Preview| Tooltip[Tooltip de Stats]
+    OmniResult --> |Enter| ModalDetalhes
 
-    %% Rota 3: Exploração
-    O -->|Fazer Missões| Q[Aba Quests & Caçadas]
-    Q --> Q1[Lista de Quests em Accordion]
-    Q1 --> Q2[Expande Requisitos da Quest]
-    Q2 --> Q3[Guia Passo a Passo Simplificado]
+    %% 1. Dashboard
+    Sidebar --> H[1. Dashboard Home]
+    H --> H1[Cards de Eventos / TL;DR]
+    H --> H2[Atalhos Rápidos de Busca]
+
+    %% 2. Pokédex V5
+    Sidebar --> P[2. Pokédex V5]
+    P --> PF[Filtros: Elementos, Nível, Tier]
+    PF --> PG[Grid de Cards de Pokémon]
+    PG --> |Clique no Card| ModalDetalhes[Overlay / Modal de Detalhes]
     
-    %% Estilização do Grafo
-    classDef default fill:#161b22,stroke:#30363d,stroke-width:1px,color:#c9d1d9;
-    classDef highlight fill:#CC5500,stroke:#CC5500,stroke-width:2px,color:#fff;
-    classDef decision fill:#0d1117,stroke:#CC5500,stroke-width:2px,color:#CC5500;
+    %% Detalhes do Modal
+    ModalDetalhes --> MT1[Aba: Status Base]
+    ModalDetalhes --> MT2[Aba: Moveset + Tags AOE/Buff]
+    ModalDetalhes --> MT3[Aba: Loot & Spawns]
+    ModalDetalhes --> MT4[Aba: Pokelog Meta]
+
+    %% Comunidade Meta (Dentro de Pokédex)
+    P --> Meta[Módulos da Comunidade]
+    Meta --> Meta1[Guia de Times / Rotação]
+    Meta --> Meta2[Tierlist Democrática]
+
+    %% 3. Sistemas
+    Sidebar --> S[3. Sistemas & Mecânicas]
+    S --> S1[Abas de Navegação Interna]
+    S1 --> SB[Boosts] --> SBC[Tabelas por Elemento]
+    S1 --> SH[Helds] --> SHC[Tabela e Efeitos Matemáticos]
+    S1 --> SM[Máquina de Star]
+
+    %% 4. Quests e NPCs
+    Sidebar --> Q[4. Quests & NPCs]
+    Q --> Q1[Catálogo de NPCs e Ofertas]
+    Q --> Q2[Lista de Quests em Accordion]
+    Q2 --> |Abrir Quest| Q3[Página da Quest]
+    Q3 --> Q3_A[TL;DR e Requisitos]
+    Q3 --> Q3_B[Guia com Micro-Tooltips no Texto]
+
+    %% 5. Personagem
+    Sidebar --> Char[5. Personagem]
+    Char --> C1[Talentos] --> C1_T[Tabelas: Personagem, Pokémon, Elemento + Crafting]
+    Char --> C2[Achievements] --> C2_P[Barras de Progresso]
+    Char --> C3[Medalhas] --> C3_G[Grid Vitrine de Buffs]
+    Char --> C4[Pokelog Pessoal]
+
+    %% 6, 7 e 8: Mundo e Evolução
+    Sidebar --> M[6. Minimapa Web] --> MF[Filtros de Marcação]
+    Sidebar --> R[7. Regiões] --> RD[Requisitos, Biomas, Level Mínimo]
+    Sidebar --> L[8. Guia de Leveling] --> LR[Rotas Otimizadas por Elemento/Level]
+
+    %% Estilização do Grafo (Regras Cognitivas)
+    classDef global fill:#161b22,stroke:#30363d,stroke-width:1px,color:#c9d1d9;
+    classDef search fill:#0d1117,stroke:#CC5500,stroke-width:2px,color:#CC5500;
+    classDef modal fill:#CC5500,stroke:#CC5500,stroke-width:1px,color:#fff;
+    classDef core fill:#1A1D24,stroke:#475569,stroke-width:1px,color:#E2E8F0;
     
-    class P3,P5,S3 highlight;
-    class O decision;
+    class Omni,OmniResult search;
+    class ModalDetalhes,MT1,MT2,MT3,MT4 modal;
+    class H,P,S,Q,Char,M,R,L core;
 ```
 
-## Decisões de UX para Neurodivergência (TDAH)
-- **Zero Poluição Visual:** Toda informação densa (ex: Movesets) está escondida até que o usuário clique no Card (Modal).
-- **Ancoragem Visual e Tags:** Uso de `[AOE]` e cores elementais quebra a parede de texto, permitindo um scanning rápido da tela.
-- **Micro-interações (Progressive Disclosure):** Accordions e Tabs (na área de Sistemas e Quests) garantem que o usuário consuma apenas uma regra ou quest de cada vez, evitando paralisia por análise e sobrecarga cognitiva.
+## Regras Críticas de Interação (Handoff para UI)
+As próximas sessões que codificarem a interface devem respeitar este fluxo baseando-se nas seguintes regras:
+
+1. **Zero Redirect (Foco Contínuo):** A jornada do usuário raramente o joga para uma "nova página" longa. Informações detalhadas sobre entidades do jogo surgem em **Modais sobrepostos (Blur no fundo)** ou **Painéis Flutuantes (Tooltips)**.
+2. **Corte Vertical de Conteúdo:** O fluxo previne o *Scroll Infinito* dividindo o conteúdo horizontalmente através de **Tabs (Abas)** em áreas pesadas como Pokédex (Status, Moveset) e Sistemas (Boosts, Helds).
+3. **Ponto de Partida Acelerado:** A busca `Omnisearch` encurta o caminho do usuário permitindo saltar o *NavGlobal* e cair direto no *Modal de Detalhes* de um Pokémon, Quest ou Item, reduzindo drasticamente o *Interaction Cost* (custo de clique).
