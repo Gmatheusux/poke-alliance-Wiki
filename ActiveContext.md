@@ -27,7 +27,7 @@
 - **Fase 6 Inicializada:** O usuário (Gabe) assumirá o controle para dar início à programação do projeto (React/Tailwind/Vite).
 
 - **Fase 6 Interrompida Taticamente:** Scaffold de componentes React pausado. O usuário (Gabe) está gerando conteúdo/writers para as sessões do site.
-- **Ação Atual:** Configurando a fundação da arquitetura isolada (Git Worktree) para receber o código futuro sem comprometer a master.
+- **Ação Atual:** Configuração do CI/CD (GitHub Actions) concluída. Os arquivos estáticos do protótipo (`map.js`, `pokedex.js`, etc.) foram movidos para `dashboard/public/` para que o build do Vite funcione corretamente sem a necessidade de `type="module"` imediatamente. O workflow `.github/workflows/deploy.yml` fará o deploy automático para a página do Github Pages a cada push na `master`.
 
 ## 4. Handoff Arquitetural (Instruções para os Próximos Agentes)
 - **Worktree Ativa:** Todo código React/Tailwind deve ser gerado na pasta física do worktree (branch eat/react-core-layout).
