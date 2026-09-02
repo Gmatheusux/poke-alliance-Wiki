@@ -1,7 +1,97 @@
-import React from 'react';
-import { Menu, Search, Home, Map, Book, Shield, Zap } from 'lucide-react';
+import React, { useState } from 'react';
+import { Menu, Search, Home, Map, Book, Shield, Zap, User, Navigation, Globe, TrendingUp, ChevronDown } from 'lucide-react';
 import { useLayoutStore } from '../store/layoutStore';
 import OmnisearchModal from './OmnisearchModal';
+
+const menuItems = [
+  {
+    title: 'Dashboard',
+    icon: Home,
+    color: 'text-brand-accent',
+    subItems: ['Resumo Diário', 'Acesso Rápido']
+  },
+  {
+    title: 'Pokédex',
+    icon: Book,
+    color: 'text-blue-400',
+    subItems: ['Filtros Avançados', 'Tierlist da Comunidade', 'Guia de Times']
+  },
+  {
+    title: 'Sistemas',
+    icon: Shield,
+    color: 'text-gray-300',
+    subItems: ['Boosts', 'Helds', 'Máquina de Star']
+  },
+  {
+    title: 'Quests & NPCs',
+    icon: Map,
+    color: 'text-amber-400',
+    subItems: ['Índice Mestre', 'Catálogo de NPCs']
+  },
+  {
+    title: 'Personagem',
+    icon: User,
+    color: 'text-emerald-400',
+    subItems: ['Talentos', 'Conquistas', 'Medalhas', 'Pokelog']
+  },
+  {
+    title: 'Minimapa',
+    icon: Navigation,
+    color: 'text-teal-400',
+    subItems: ['Filtros', 'Zonas de Caça']
+  },
+  {
+    title: 'Regiões',
+    icon: Globe,
+    color: 'text-cyan-400',
+    subItems: ['Catálogo de Zonas', 'Informações Vitais']
+  },
+  {
+    title: 'Guia de Leveling',
+    icon: TrendingUp,
+    color: 'text-purple-400',
+    subItems: ['Rotas Otimizadas', 'Recomendações']
+  }
+];
+
+function NavItem({ item }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const Icon = item.icon;
+
+  return (
+    <div className="mb-1">
+      <button 
+        onClick={() => setIsOpen(!isOpen)}
+        className={`w-full flex items-center justify-between px-3 py-2 rounded-lg transition-colors ${
+          isOpen ? 'bg-surface-hover text-text-main' : 'text-text-muted hover:bg-surface-hover hover:text-text-main'
+        }`}
+      >
+        <div className="flex items-center gap-3 font-medium">
+          <Icon size={18} className={isOpen ? item.color : 'text-text-muted'} />
+          {item.title}
+        </div>
+        <ChevronDown 
+          size={14} 
+          className={`transition-transform duration-200 ${isOpen ? 'rotate-180 text-brand-primary' : ''}`} 
+        />
+      </button>
+
+      {isOpen && item.subItems.length > 0 && (
+        <div className="mt-1 ml-4 pl-4 border-l-2 border-surface-hover flex flex-col gap-1">
+          {item.subItems.map((sub, idx) => (
+            <a 
+              key={idx} 
+              href="#" 
+              className="text-sm px-3 py-1.5 text-text-muted hover:text-white hover:bg-surface-hover rounded-md transition-colors"
+            >
+              {sub}
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function AppLayout({ children }) {
   const { openOmnisearch } = useLayoutStore();
@@ -9,7 +99,7 @@ export default function AppLayout({ children }) {
   return (
     <div className="flex h-screen w-full bg-bg-base text-text-main overflow-hidden">
       {/* Sidebar */}
-      <aside className="w-64 bg-surface border-r border-surface-hover flex flex-col">
+      <aside className="w-72 bg-surface border-r border-surface-hover flex flex-col flex-shrink-0">
         <div className="p-4 flex items-center gap-3 font-heading font-bold text-xl tracking-wide">
           <div className="w-8 h-8 rounded-full bg-brand-primary flex items-center justify-center">
             <Zap size={18} className="text-brand-accent" />
@@ -20,7 +110,7 @@ export default function AppLayout({ children }) {
         <div className="px-4 pb-4">
           <button 
             onClick={openOmnisearch}
-            className="w-full flex items-center gap-2 bg-bg-base border border-surface-hover rounded-lg px-3 py-2 text-sm text-text-muted hover:text-text-main hover:border-brand-primary transition-colors cursor-pointer"
+            className="w-full flex items-center gap-2 bg-bg-base border border-surface-hover rounded-lg px-3 py-2 text-sm text-text-muted hover:text-text-main hover:border-brand-primary transition-colors cursor-pointer shadow-inner"
           >
             <Search size={16} />
             <span>Buscar...</span>
@@ -28,32 +118,20 @@ export default function AppLayout({ children }) {
           </button>
         </div>
 
-        <nav className="flex-1 overflow-y-auto py-2 px-3 space-y-1">
-          <a href="#" className="flex items-center gap-3 px-3 py-2 rounded-lg bg-surface-hover text-brand-accent font-medium">
-            <Home size={18} />
-            Painel
-          </a>
-          <a href="#" className="flex items-center gap-3 px-3 py-2 rounded-lg text-text-muted hover:bg-surface-hover hover:text-text-main transition-colors">
-            <Book size={18} />
-            Pokédex V5
-          </a>
-          <a href="#" className="flex items-center gap-3 px-3 py-2 rounded-lg text-text-muted hover:bg-surface-hover hover:text-text-main transition-colors">
-            <Shield size={18} />
-            Sistemas
-          </a>
-          <a href="#" className="flex items-center gap-3 px-3 py-2 rounded-lg text-text-muted hover:bg-surface-hover hover:text-text-main transition-colors">
-            <Map size={18} />
-            Minimapa
-          </a>
+        <nav className="flex-1 overflow-y-auto py-2 px-3 custom-scrollbar">
+          {menuItems.map((item, idx) => (
+            <NavItem key={idx} item={item} />
+          ))}
         </nav>
 
-        <div className="p-4 border-t border-surface-hover text-xs text-text-muted text-center">
-          v1.1.0 (Zero-Bloat)
+        <div className="p-4 border-t border-surface-hover flex items-center justify-between text-xs text-text-muted">
+          <span>v1.2.0 (Zero-Bloat)</span>
+          <a href="#" className="hover:text-brand-primary transition-colors">Patch Notes</a>
         </div>
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 overflow-y-auto p-6 md:p-8">
+      <main className="flex-1 overflow-y-auto p-6 md:p-8 custom-scrollbar">
         {children}
       </main>
 

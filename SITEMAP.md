@@ -18,7 +18,7 @@ Este mapa unifica as intenções de neurodiversidade e redução de ruído (mape
 - **TL;DR Diário:** Resumo automático de eventos ativos.
 - **Quick Access:** Cards dinâmicos para últimas buscas (Zero-Bloat).
 
-### 2. 🐉 Pokédex V5 (Meta & Combate)
+### 2. 🐉 Pokédex (Meta & Combate)
 - **Filtros Avançados (Dropdowns):**
   - **Level:** Seleção de range de nível mínimo para uso.
   - **Elemento:** Tipagem (🔥 Fogo, 💧 Água, etc).

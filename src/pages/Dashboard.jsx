@@ -1,6 +1,7 @@
 import React from 'react';
 import NewsCarousel from '../components/NewsCarousel';
 import QuickAccessGrid from '../components/QuickAccessGrid';
+import PartnersSection from '../components/PartnersSection';
 
 export default function Dashboard() {
   return (
@@ -12,6 +13,7 @@ export default function Dashboard() {
       
       <NewsCarousel />
       <QuickAccessGrid />
+      <PartnersSection />
     </div>
   );
 }

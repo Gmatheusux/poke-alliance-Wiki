@@ -5,8 +5,8 @@
 - Construção do **AppLayout** com Sidebar estática responsiva e espaço principal (`bg-[#0F1115]`).
 - Criação da Store via **Zustand** (`layoutStore.js`) para controle de modais globais.
 - Construção do **OmnisearchModal** injetado via React Portal, equipado com Blur Background, Input com Debounce nativo de 300ms e controle via `Ctrl+K` / `ESC`.
-- Estruturação do **Dashboard** (Página Principal) contendo o **NewsCarousel** (banners rotativos de novidades) e o **QuickAccessGrid** (links ilustrativos em grid).
-- Tradução de toda a base estrutural para Português (PT-BR) conforme validado em QA.
+- **Sidebar Avançada:** Menu lateral refatorado para usar *Accordions* (Dropdowns verticais), agrupando as 8 sessões principais e suas sub-sessões baseadas no SITEMAP. Scrollbars customizadas inseridas no CSS global para manter a estética dark.
+- Estruturação do **Dashboard** (Página Principal) contendo o **NewsCarousel** (banners rotativos), **QuickAccessGrid** (com arte geométrica gerada por IA no fundo) e a seção de **Criadores Oficiais** (integração High-Fidelity).
 
 ## 2. Decisões Arquiteturais Tomadas
 - **Scaffold Lo-Fi Concluído:** A primeira etapa do código foca 100% na fundação arquitetural de roteamento visual e states globais, antes de aplicar o polimento de alta fidelidade (Drop Shadows, cores de tipologia).
