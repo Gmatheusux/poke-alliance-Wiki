@@ -1,6 +1,7 @@
 # Active Context - Poke Alliance
 
 ## 1. Componentes Finalizados (Sessão Atual)
+- Criação do `DATA_MAINTENANCE.md` para instruir futuros Agentes IA sobre o fluxo de atualização de dados, protegendo a arquitetura e copywriting.
 - Processamento massivo do `wiki_vault` concluído via orquestração de 8 subagentes em paralelo.
 - Arquitetura de dados totalmente lapidada e salva no diretório `/content_ready/` (8 arquivos Markdown), em conformidade com as leis de Copywriting e UX Voice.
 - Execução de subagentes para validação de tom de voz e UX Writing (Franquia Pokémon + Indústria AAA).
@@ -22,8 +23,8 @@
 - **Comunicação (UX Writing e Copywriting):** Adoção de arquitetura AAA e inserção compulsória de atribuição (*Dev Comments*) para conteúdos com origem em youtubers/comunidade, assegurando transparência.
 
 ## 3. Próxima Etapa Pendente
-- Toda a estruturação de conteúdo, arquitetura de dados e heurísticas de texto estão 100% finalizadas e no repositório.
-- **Fase 6 Inicializada:** Avançar para a estruturação do front-end real. Iniciar scaffold da base de código (React/Tailwind/Vite).
+- Infraestrutura completa. Todo planejamento de UX e protocolos de IA (dados, manutenção e voice) estão formatados e versionados.
+- **Fase 6 Inicializada:** O usuário (Gabe) assumirá o controle para dar início à programação do projeto (React/Tailwind/Vite).
 
 - **Fase 6 Interrompida Taticamente:** Scaffold de componentes React pausado. O usuário (Gabe) está gerando conteúdo/writers para as sessões do site.
 - **Ação Atual:** Configurando a fundação da arquitetura isolada (Git Worktree) para receber o código futuro sem comprometer a master.
