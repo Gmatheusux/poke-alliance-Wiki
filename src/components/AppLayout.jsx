@@ -110,8 +110,8 @@ export default function AppLayout({ children }) {
 
   return (
     <div className="flex h-screen w-full bg-bg-base text-text-main overflow-hidden">
-      {/* Sidebar */}
-      <aside className="w-72 bg-surface border-r border-surface-hover flex flex-col flex-shrink-0">
+      {/* Sidebar (with relative z-index to sit above bg) */}
+      <aside className="relative z-10 w-72 bg-surface border-r border-surface-hover flex flex-col flex-shrink-0 backdrop-blur-sm bg-opacity-95">
         <div className="p-4 flex items-center gap-3 font-heading font-bold text-xl tracking-wide">
           <div className="w-8 h-8 rounded-full bg-brand-primary flex items-center justify-center">
             <Zap size={18} className="text-brand-accent" />
@@ -143,7 +143,7 @@ export default function AppLayout({ children }) {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 overflow-y-auto p-6 md:p-8 custom-scrollbar">
+      <main className="relative z-10 flex-1 overflow-y-auto p-6 md:p-8 custom-scrollbar">
         {children}
       </main>
 
