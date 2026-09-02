@@ -29,6 +29,12 @@ Nossa aplicação é dividida em 8 pilares base (as minúcias estão em `SITEMAP
 7. **Regiões:** Catálogo geopolítico. Níveis exigidos de mapa e condições de acesso para cada nova ilha/bioma.
 8. **Guia de Leveling:** Roteiros otimizados (ex: Lv 30-50) baseados no elemento principal do time atual do jogador.
 
+## ✍️ UX Writing (A Voz Híbrida)
+A linguagem da plataforma segue a regra do **Híbrido Competitivo** (detalhada em `.agents/rules/ux_writing_voice.md`), equilibrando a oficialidade da marca com a precisão mecânica dos esportes eletrônicos:
+- **Lei da Separação:** Lore não se mistura com Matemática. O texto de ambientação é isolado dos dados brutos de dano, status e cooldowns.
+- **Ocultamento Estratégico (Progressive Disclosure):** A matemática profunda do meta-game (estilo Smogon) fica recolhida em *Advanced Tooltips* (estilo Blizzard) acionados via Hover/Shift.
+- **Verbos Padronizados & Badges:** Eliminação de jargões flutuantes. Ações têm verbos únicos, e toda citação a elementos/status exige a presença de um Badge visual.
+
 ## 🛠️ Paradigmas de Desenvolvimento (Handoff)
 
 ## 🎨 Design System (A Fundação Híbrida)
