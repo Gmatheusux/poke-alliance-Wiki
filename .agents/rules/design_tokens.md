@@ -9,11 +9,12 @@ description: Escalas matemáticas de cor (50-900), tipografia (Inter) e estilo d
 - **Amarelo Secundário (Base 400):** `#FFCB05`. Hover (500): `#E6B500`.
 - **Dark Mode (Slate/Zinc):** Fundo Extremo `#090A0C`, Surface Principal `#0F1115`, Elevado (Modais/Cards) `#181A20`, Borda `#2C313C`.
 
-## 2. Tipografia (Alta Densidade)
-- **Família Principal:** `Inter`, system-ui, sans-serif.
+## 2. Tipografia (Stack Oficial e Fallback)
+- **Títulos e Interações (Display):** `Futura Condensed`, `Helvetica Black Condensed`, sans-serif. Aplicado em H1, H2, e CTAs primários para injetar o DNA da comunicação da franquia.
+- **Corpo e Dados (Base):** `Montserrat`, sans-serif. Substitui a Inter como fonte neutra. É geométrica, sem serifa e excelente para a legibilidade em tabelas, atributos e leitura prolongada.
 - **Base Densa (Body):** `14px` (`0.875rem`). Reduzido para encaixar mais dados sem perder legibilidade.
 - **Micro (Badges/Tooltips):** `10px` (`0.625rem`) a `12px` (`0.75rem`).
-- **Pesos Estritos:** `400` (Regular) para dados normais, `500` (Medium) para cabeçalhos de tabela, `700` (Bold) para títulos H1/H2. Omissão proposital de pesos finos (Light) para evitar perda de contraste no Dark Mode.
+- **Pesos Estritos:** `400` (Regular) para o corpo em Montserrat, `600` (Semi-bold) para rótulos/tabelas, e `800` (Extra Bold) para impacto nos Títulos em Futura.
 
 ## 3. Iconografia de Elementos (O Padrão SV Style)
 - **Estética Aprovada:** Scarlet & Violet (SV Style). Formato de Pílulas/Retângulos arredondados, preenchimento tátil com sutil *Inner Shadow/Gradient* (emboss) imitando um botão físico.
