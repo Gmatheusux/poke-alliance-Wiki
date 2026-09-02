@@ -22,3 +22,6 @@
 ## 3. Próxima Etapa Pendente
 - O planejamento UX, a Arquitetura de Informação e as Regras de UI/Texto estão 100% formatadas, modulares e validadas.
 - **Fase 6 Inicializada:** Avançar para a estruturação do front-end real. Iniciar scaffold da base de código (React/Tailwind/Vite) ou estruturação final do UI Kit no Figma, dependendo do gatilho imediato.
+
+- **Fase 6 Interrompida Taticamente:** Scaffold de componentes React pausado. O usuário (Gabe) está gerando conteúdo/writers para as sessões do site.
+- **Ação Atual:** Configurando a fundação da arquitetura isolada (Git Worktree) para receber o código futuro sem comprometer a master.

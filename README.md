@@ -56,3 +56,11 @@ Para contribuir na base de código (geralmente baseada em React/Tailwind), é te
 
 ---
 > *"Construído para quem joga. Ocultando a complexidade, revelando a estratégia."*
+
+## 🚀 Engenharia e Performance (Regras Atuais)
+O projeto migrará de Vanilla JS para **React + Tailwind** sob rígidas regras anti-bloat:
+- **Arquitetura Base:** Feature-Sliced Design (FSD).
+- **Zero-Bloat Grid:** Uso obrigatório de TanStack Virtual em 2D para renderização de cards e tabelas massivas.
+- **State Management:** Separação entre Estado de API (TanStack Query) e Estado de Interface (Zustand).
+- **Engine Gráfica:** Proibido uso de DOM para marcadores de mapa. Minimapa operado via **PixiJS (Canvas/WebGL)** e assets via **Sprite Atlases** em WebP.
+- **Handoff (Regra 19):** Todo desenvolvimento ocorre isoladamente via Git Worktree. A branch master permanece blindada.
