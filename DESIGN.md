@@ -1,22 +1,24 @@
 ---
 name: Poke Alliance Wiki
-version: 1.0.0
+version: 1.1.0
 tokens:
   colors:
+    brand_primary: "#3C5AA6" # Azul Oficial Pokemon
+    brand_accent: "#FFCB05" # Amarelo Oficial Pokemon
     background: "#0F1115"
     surface: "#1A1D24"
-    primary: "#CC5500"
+    surface_hover: "#2D3748"
     text_main: "#E2E8F0"
     text_muted: "#94A3B8"
-    accent_neon: "#00F0FF"
   typography:
-    heading: "Inter, sans-serif"
+    heading: "Inter, sans-serif" # Fonte geométrica limpa e pesada
     body: "Roboto, sans-serif"
     monospace: "Fira Code, monospace"
   spacing:
     base: "8px"
     component_gap: "16px"
     section_padding: "32px"
+    border_radius_base: "12px" # Arredondamento amigável (Oficial)
   breakpoints:
     mobile: "320px - 767px"
     tablet: "768px - 1023px"
@@ -42,19 +44,24 @@ tokens:
     - Water
 ---
 
-# Diretrizes de UX/UI - A Nova Era das Wikis
+# Diretrizes de UX/UI - A Nova Era das Wikis (V2 Híbrida)
 
-Este documento estabelece as regras de design e usabilidade para a plataforma, focando em performance, legibilidade e respeito cognitivo ao jogador, extirpando os padrões poluídos da indústria atual.
+Este documento estabelece as regras sagradas de design e usabilidade para a plataforma, fundindo a arquitetura Zero-Bloat de alta densidade (SaaS) com a estética diegética oficial da franquia Pokémon.
 
-## 1. Arquitetura de Informação e Navegação
-- **Omnisearch (Ctrl+K):** A busca é o motor principal. Ela deve exibir microdados (ícones, status base, tags) diretamente no painel flutuante, eliminando cliques de navegação desnecessários.
-- **Table of Contents (TOC) Fixo:** O índice do artigo acompanha o scroll vertical em desktop. No mobile, torna-se um menu flutuante ancorado na "Thumb Zone" (área de alcance do polegar na metade inferior da tela).
+## 1. Identidade Visual e Oficialidade (Pro-Max)
+- **Estética Oficial:** A interface deve espelhar a qualidade de material corporativo da franquia. Componentes interativos recebem `border-radius` macios (design amigável) e sprites 2D utilizarão Drop Shadows intensos para gerar efeito **Pop-Out**.
+- **Cores Estritas como Dados:** A paleta de cores variadas (vermelhos, verdes, azuis vibrantes) é restrita **única e exclusivamente** aos **Elementos/Tipagens**. A estrutura do site, modais e backgrounds permanecem em Slate/Zinc neutro para evitar fadiga visual.
+- **Regra do Ícone Obrigatório:** Sempre que um elemento/tipo for citado na UI (Filtros, Pokédex, Skills, Tabelas de Crafting), ele DEVE ser representado pela **Soma Inseparável = (Cor exata do Elemento + Ícone Oficial)** em formato de Badge/Pill. Jamais confie apenas no texto.
 
-## 2. Padrões de Interface (UI)
-- **Zero-Bloat e Dark Mode:** A interface é obrigatoriamente escura (reduz fadiga) e focada no conteúdo. Proibido o uso de elementos que causem *Viewport Squeeze* (como banners fixos ou anúncios intrusivos).
-- **Progressive Disclosure:** Dados muito densos, como árvores de habilidades ou lore massivo, devem ser fragmentados usando `Accordions` (sanfonas) ou `Tabs` (abas), revelando a carga cognitiva sob demanda.
-- **Cards ao invés de Tabelas (Mobile):** Tabelas de loot ou status com múltiplas colunas devem ser readequadas para layouts responsivos de *Cards* em telas menores, evitando rolagem horizontal desconfortável.
+## 2. Arquitetura de Informação e Navegação
+- **Omnisearch (Ctrl+K):** A busca é o motor principal. Exibe microdados (ícones de elementos, status base, tags) direto no painel flutuante, anulando cliques desnecessários.
+- **Mini-Sprites como Âncora:** Listagens, rankings e grids utilizam o Mini-Sprite (32x32px) como ancoragem visual primária. Jogadores escaneiam imagens, não textos.
 
-## 3. Microinterações e Escaneabilidade
-- **Tooltips Ricos e Contextuais:** Termos técnicos, itens e locais mencionados no meio de parágrafos devem abrir um *Tooltip* de alta fidelidade via `hover` (desktop) ou toque (mobile), mostrando as estatísticas sem obrigar o usuário a sair da página.
-- **Módulos TL;DR (Inteligência Artificial):** Artigos extensos (ex: Guias de Raid/Boss) devem obrigatoriamente possuir um card de resumo gerado com inteligência artificial no topo, garantindo leitura dinâmica em menos de 5 segundos.
+## 3. Padrões de Interface (UI) e Densidade
+- **Zero-Bloat e Dark Mode:** Interface obrigatoriamente escura. Tabelas massivas não podem usar as cores dos elementos como fundo da linha (mata o contraste WCAG); as cores ficam contidas nos Badges.
+- **Progressive Disclosure:** Dados estratificados. Movesets divididos por **Abas (Tabs)** geracionais. Painéis deslizantes (**Drawers**) para detalhes rápidos, mantendo o jogador no contexto da busca original.
+- **Matemática Exposta:** Em módulos competitivos ou calculadoras, a matemática (dano, breeding) fica visível em tabelas densas, com cores limitadas a feedback (Verde = Buff, Vermelho = Nerf).
+
+## 4. Microinterações e Escaneabilidade
+- **Tooltips Ricos e Contextuais:** Termos técnicos, mecânicas ou habilidades acionam um *Tooltip* de alta fidelidade via `hover`. Ninguém abre nova aba para checar status de um Held Item.
+- **Sticky Headers:** Tabelas longas de dados competitivos ou loot obrigam o cabeçalho a rolar (Sticky) junto com a tela, não perdendo a referência.
