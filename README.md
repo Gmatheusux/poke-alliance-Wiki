@@ -2,7 +2,6 @@
 
 Bem-vindo ao repositório oficial da Wiki e Dashboard do **Poke Alliance**. Este projeto foi idealizado para romper com o padrão engessado e poluído das wikis de jogos tradicionais (como a rede Fandom).
 
-O foco absoluto do nosso front-end é **Zero-Bloat**, acessibilidade cognitiva (otimizado para perfis neurodivergentes / TDAH) e agilidade bruta na entrega de dados para o jogador in-game.
 
 ## 🚀 Filosofia do Projeto
 
